@@ -127,7 +127,7 @@ namespace SharpUpdate
 
                 //  Gets the appId node with the update info
                 //  This allows you to store all programs update nodes in one file
-                XmlNode node = doc.DocumentElement.SelectSingleNode("//update[@appID=´" + appID + ";]");
+                XmlNode node = doc.DocumentElement.SelectSingleNode("//update[@appId=´" + appID + ";]");
 
                 //  If the node doesnt exist ,there is no update
                 if (node == null)
@@ -136,8 +136,8 @@ namespace SharpUpdate
                 }
 
                 //  Parse data
-                version = Version.Parse(node["latestVersion"].InnerText);
-                url = node["latestVersionUrl"].InnerText;
+                version = Version.Parse(node["version"].InnerText);
+                url = node["url"].InnerText;
                 fileName = node["fileName"].InnerText;
                 md5 = node["md5"].InnerText;
                 description = node["description"].InnerText;
