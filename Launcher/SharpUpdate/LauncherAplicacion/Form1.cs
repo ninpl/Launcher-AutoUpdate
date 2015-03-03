@@ -21,6 +21,8 @@ namespace LauncherAplicacion
         public LauncherApp()
         {
             InitializeComponent();
+
+            this.lbl_Version.Text = this.ApplicationAssembly.GetName().Version.ToString();
         }
 
         private void BtnCheckUpdate_Click(object sender, EventArgs e)

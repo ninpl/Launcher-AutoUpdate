@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.BtnCheckUpdate = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Version = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnCheckUpdate
             // 
-            this.BtnCheckUpdate.Location = new System.Drawing.Point(111, 331);
+            this.BtnCheckUpdate.Location = new System.Drawing.Point(66, 316);
             this.BtnCheckUpdate.Name = "BtnCheckUpdate";
             this.BtnCheckUpdate.Size = new System.Drawing.Size(187, 58);
             this.BtnCheckUpdate.TabIndex = 0;
@@ -42,21 +42,21 @@
             this.BtnCheckUpdate.UseVisualStyleBackColor = true;
             this.BtnCheckUpdate.Click += new System.EventHandler(this.BtnCheckUpdate_Click);
             // 
-            // label1
+            // lbl_Version
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(151, 90);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.lbl_Version.AutoSize = true;
+            this.lbl_Version.Location = new System.Drawing.Point(135, 78);
+            this.lbl_Version.Name = "lbl_Version";
+            this.lbl_Version.Size = new System.Drawing.Size(42, 13);
+            this.lbl_Version.TabIndex = 1;
+            this.lbl_Version.Text = "Version";
             // 
             // LauncherApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 491);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(307, 386);
+            this.Controls.Add(this.lbl_Version);
             this.Controls.Add(this.BtnCheckUpdate);
             this.Name = "LauncherApp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -69,7 +69,7 @@
         #endregion
 
         private System.Windows.Forms.Button BtnCheckUpdate;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_Version;
     }
 }
 
