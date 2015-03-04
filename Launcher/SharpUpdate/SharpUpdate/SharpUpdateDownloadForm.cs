@@ -7,22 +7,43 @@ using System.Windows.Forms;
 
 namespace SharpUpdate
 {
-    public partial class SharpUpdateDownloadForm : Form
+    /// <summary>
+    /// Form that download the update
+    /// </summary>
+    internal partial class SharpUpdateDownloadForm : Form
     {
+        /// <summary>
+        /// The web client to download the update
+        /// </summary>
         private WebClient webClient;
 
+        /// <summary>
+        /// The thread to hash the file
+        /// </summary>
         private BackgroundWorker bgWorker;
 
+        /// <summary>
+        /// A temp file name to download to
+        /// </summary>
         private string tempFile;
 
+        /// <summary>
+        /// The MD5 hash of the file to download
+        /// </summary>
         private string md5;
 
+        /// <summary>
+        /// Gets the temp file path fot the download file
+        /// </summary>
         internal string TempFilePatch
         {
             get { return this.tempFile;}
         }
 
-        public SharpUpdateDownloadForm(Uri location,string md5,Icon programIcon)
+        /// <summary>
+        /// Creates a new SharpUpdateDownloadForm
+        /// </summary>
+        internal SharpUpdateDownloadForm(Uri location,string md5,Icon programIcon)
         {
             InitializeComponent();
 
@@ -47,13 +68,13 @@ namespace SharpUpdate
             catch { this.DialogResult = DialogResult.No; this.Close(); }
         }
 
-        void webClient_DownloadProgressChanged(Object sender, DownloadProgressChangedEventArgs e)
+        private void webClient_DownloadProgressChanged(Object sender, DownloadProgressChangedEventArgs e)
         {
             this.progressBar.Value = e.ProgressPercentage;
             this.lblProgress.Text = String.Format("Download {0} of {1}",FormatByte(e.BytesReceived,1,true),FormatByte(e.TotalBytesToReceive,1,true));
         }
 
-        void webClient_DownloadFileCompleted(Object sender, AsyncCompletedEventArgs e)
+        private void webClient_DownloadFileCompleted(Object sender, AsyncCompletedEventArgs e)
         {
             if (e.Error != null)
             {
@@ -74,7 +95,7 @@ namespace SharpUpdate
             }
         }
 
-        void bgWorker_DoWork(Object sender, DoWorkEventArgs e)
+        private void bgWorker_DoWork(Object sender, DoWorkEventArgs e)
         {
             string file = ((string[])e.Argument)[0];
             string updateMd5 = ((string[])e.Argument)[1];
@@ -89,7 +110,7 @@ namespace SharpUpdate
             }
         }
 
-        void bgWorker_RunWorkerCompleted(Object sender, RunWorkerCompletedEventArgs e)
+        private void bgWorker_RunWorkerCompleted(Object sender, RunWorkerCompletedEventArgs e)
         {
             this.DialogResult = (DialogResult)e.Result;
             this.Close();
