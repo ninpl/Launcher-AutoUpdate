@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <sharpUpdate>
-	<update appID="LauncherAplicacion">
+	<update appId="LauncherAplicacion">
 		<version>2.0.0</version>
 		<url>https://github.com/lPinchol/Launcher-AutoUpdate/blob/master/Resources/Release/LauncherAplicacion.exe</url>
 		<fileName>LauncherAplicacion2.exe</fileName>
