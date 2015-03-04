@@ -11,7 +11,7 @@ namespace SharpUpdate
         /// <summary>
         /// Creates a new SharpUpdateInfoForm
         /// </summary>
-        public SharpUpdateInfoForm(ISharpUpdate applicationInfo,SharpUpdateXml updateInfo)
+        internal SharpUpdateInfoForm(ISharpUpdate applicationInfo,SharpUpdateXml updateInfo)
         {
             InitializeComponent();
 

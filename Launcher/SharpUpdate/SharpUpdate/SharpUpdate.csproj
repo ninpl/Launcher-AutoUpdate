@@ -67,6 +67,7 @@
     <Compile Include="SharpUpdateInfoForm.Designer.cs">
       <DependentUpon>SharpUpdateInfoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SharpUpdater.cs" />
     <Compile Include="SharpUpdateXml.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -16,7 +16,7 @@ namespace LauncherAplicacion
     {
         private string nameApp = "Launcher APP";
         private string idApp = "Launcher APP";
-        private string uriApp = "";
+        private string uriApp = "https://github.com/lPinchol/Launcher-AutoUpdate/tree/master/Resources/Xml/Update.xml";
 
         public LauncherApp()
         {
